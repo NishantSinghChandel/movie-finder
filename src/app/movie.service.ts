@@ -21,7 +21,7 @@ export class MovieService {
   }
 
   searchMovies(searchStr: string){
-    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&query='+searchStr+'&primary_release_date.gte=2016-06-20&primary_release_date.lte=2017-07-03&sort_by=popularity.desc&this.api_key'+this.apiKey)
+    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&query='+searchStr+'&sort_by=popularity.desc&api_key='+this.apiKey)
     .map(res => res.json()); 
   }
 
