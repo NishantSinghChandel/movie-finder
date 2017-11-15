@@ -9,8 +9,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall":"production ng-build --aot -prod"
+    "e2e": "ng e2e"
   },
    "engines":{
        "node":"~6.11.4",
