@@ -2,16 +2,19 @@
   "name": "movie-finder",
   "version": "0.0.0",
   "license": "MIT",
+  "main":"main.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall":"grunt sass:production && ng-build --aot -prod",
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.1.2",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
