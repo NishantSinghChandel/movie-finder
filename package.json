@@ -10,11 +10,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "engines":{
+      "node":"6.11.4",
+      "npm":"3.10.10"
+  }
   },
-      "engines":{
-    "node":"6.11.4",
-    "npm":"3.10.10"
-  },
+    
   "private": true,
   "dependencies": {
     "@angular/cli": "1.1.2",
