@@ -12,17 +12,17 @@ export class MovieService {
   }
   getPopular(){
     return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&sort_by=popularity.desc&api_key=eba6955a2c5a4dace95fa4773c9bf2bc')
-    .map(res => res.json()); 
+    .map(res => res.json());
   }
 
   getInTheaters(){
     return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&primary_release_date.gte=2016-06-20&primary_release_date.lte=2017-07-03&sort_by=popularity.desc&api_key=eba6955a2c5a4dace95fa4773c9bf2bc')
-    .map(res => res.json()); 
+    .map(res => res.json());
   }
 
   searchMovies(searchStr: string){
-    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&query='+searchStr+'&sort_by=popularity.desc&api_key='+this.apiKey)
-    .map(res => res.json()); 
+    return this._jsonp.get('https://api.themoviedb.org/3/search/movie?callback=JSONP_CALLBACK&query=' + searchStr +'&sort_by=popularity.desc&api_key=' +this.apiKey)
+    .map(res => res.json());
   }
 
 }
