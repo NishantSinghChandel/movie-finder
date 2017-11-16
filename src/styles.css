@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+.headline {
+  color: #1fd26a !important;
+  font-family: 'Marmelad', sans-serif;
+}
+
+.color-dark-cyan {
+  color: #45a29e;
+}
+
+.color-dark-cyan-bg {
+  background: #25242c;
+}
+
+.btn-main {
+  min-width: 150px;
+  padding: 10px 15px;
+  background: transparent;
+  border: 2px solid #1fd26a;
+}
+
+.text-color {
+  color: #c5c6c7;
+}
+
+.section-bg {
+  background: #25242c;
+}
+
+.main-container, html, body {
+  background: #32313b;
+  font-family: 'Marmelad', sans-serif;
+}
+
+.title {
+  font-family: 'Marmelad', sans-serif;
+  font-size: 17px;
+  line-height: 25px;
+  text-align: center;
+  max-height:50px;
+  overflow: hidden;
+}
+
+.movie-card {
+  height: 360px;
+}
+
+@media (max-width: 991px) {
+  .movie-card {
+    height: 100%;
+  }
+}
+

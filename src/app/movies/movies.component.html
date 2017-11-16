@@ -1,27 +1,27 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>Find a Movies</h1>
-    <p>Search for a movie using the form below</p>
+<div class="jumbotron section-bg">
+  <div class="container text-center">
+    <h2 class="headline">Search Your Favourite Movie</h2>
+    <p>Search your movie using search box</p>
     <form (submit)="searchMovies()">
-      <input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr" />
+      <input type="text" class="form-control" [(ngModel)]="searchStr" name="searchStr" placeholder="Search"/>
       <br>
-      <button class="btn btn-primary btn-lg">Find</button>
+      <button class="btn-main">Find</button>
     </form>
   </div>
 </div>
 
 
 <div *ngIf="searchRes" class="panel panel-default">
-  <div class="panel-heading">Search Results</div>
-  <div class="panel-body">
+  <div class="panel-heading headline">Search Results</div>
+  <div class="panel-body section-bg">
     <div class="row">
-      <div *ngFor='let movie of searchRes;let i =index;' class="col-md-2">
-         <div *ngIf='i < 18'>
+      <div *ngFor='let movie of searchRes;let i =index;' class="col-md-2 text-center">
+         <div class="movie-card" *ngIf='i < 18'>
           <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-          <h4>{{movie.title}}</h4>
+          <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-defa ult" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
     </div>
@@ -29,15 +29,15 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Popular Movies</div>
-  <div class="panel-body">
+  <div class="panel-heading headline">Popular Movies</div>
+  <div class="panel-body section-bg">
     <div class="row">
-      <div *ngFor='let movie of popularList;let i =index;' class="col-md-2">
-        <div *ngIf='i < 6'>
-          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-          <h4>{{movie.title}}</h4>
+      <div *ngFor='let movie of popularList;let i =index;' class="col-md-2 text-center">
+        <div class="movie-card" *ngIf='i < 6'>
+          <img  class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-defa ult" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
     </div>
@@ -45,15 +45,15 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">In Theater</div>
-  <div class="panel-body">
+  <div class="panel-heading headline">In Theater</div>
+  <div class="panel-body section-bg">
     <div class="row">
-      <div *ngFor='let movie of theatersList;let i =index;' class="col-md-2">
-        <div *ngIf='i < 6'>
+      <div *ngFor='let movie of theatersList;let i =index;' class="col-md-2 text-center">
+        <div class="movie-card" *ngIf='i < 6'>
           <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
-          <h4>{{movie.title}}</h4>
+          <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="btn btn-defa ult" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
     </div>
