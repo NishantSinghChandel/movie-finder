@@ -10,8 +10,6 @@
     </form>
   </div>
 </div>
-
-
 <div *ngIf="searchRes" class="panel panel-default">
   <div class="panel-heading headline">Search Results</div>
   <div class="panel-body section-bg">
@@ -21,7 +19,7 @@
           <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" routerLink='/movie/{{movie.id}}'>View details &raquo;</a></p>
         </div>
       </div>
     </div>
@@ -37,7 +35,7 @@
           <img  class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" routerLink='/movie/{{movie.id}}'>View details &raquo;</a></p>
         </div>
       </div>
     </div>
@@ -53,7 +51,7 @@
           <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="headline" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="headline" routerLink='/movie/{{movie.id}}'>View details &raquo;</a></p>
         </div>
       </div>
     </div>
