@@ -7,8 +7,13 @@ export class MovieService {
   apiKey: string;
 
   constructor(private _jsonp: Jsonp) {
-    this.apiKey = "eba6955a2c5a4dace95fa4773c9bf2bc";
+    this.apiKey = 'eba6955a2c5a4dace95fa4773c9bf2bc';
     console.log('Movie service initia..');
+  }
+
+  getMovie(id: string) {
+    return this._jsonp.get('https://api.themoviedb.org/3/discover/movie/' + id + '?callback=JSONP_CALLBACK&api_key=' + this.apiKey)
+      .map(res => res.json());
   }
 
   getPopular() {
