@@ -1,3 +1,37 @@
-<p>
-  movie works!
-</p>
+<div class="movie-detail">
+  <div *ngIf="movie">
+    <div class="panel panel-default">
+      <div class="panel-heading headline">{{movie.title}}</div>
+      <div class="panel-body section-bg">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="img-thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          </div>
+          <div class="col-md-7">
+            <ul class="list-group">
+              <li class="list-group-item" >Genre:
+                <span *ngFor="let genre of movie.genres"> {{genre.name}} </span>
+              </li>
+              <li *ngIf='movie.release_date' class="list-group-item">Release Date: {{movie.release_date}}</li>
+              <li *ngIf='movie.vote_average'class="list-group-item">Rating: {{movie.vote_average}}</li>
+              <li *ngIf='movie.status'  class="list-group-item">Status: {{movie.status}}</li>
+              <li *ngIf='movie.overview' class="list-group-item">Overview: {{movie.overview}}</li>
+
+
+            </ul>
+            <div class="flex-between">
+              <a  class="btn btn-main" *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank">
+                Visit Official Website</a>
+              <a  class="btn btn-main" *ngIf="movie.imdb_id" href="http://www.imdb.com/title/{{movie.imdb_id}}" target="_blank">
+                More Info From IMDB </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!movie">
+    No Results
+  </div>
+</div>

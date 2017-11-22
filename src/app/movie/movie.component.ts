@@ -9,17 +9,18 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./movie.component.css'],
 })
 export class MovieComponent implements OnInit {
+  movie: Object;
+
   constructor(private router: ActivatedRoute, private _movieService: MovieService) {
   }
 
   ngOnInit() {
     this.router.params.subscribe((params) => {
       const id = params['id'];
-      console.log(params,'params')
       this._movieService.getMovie(id).subscribe(movie => {
-        console.log(movie);
+        this.movie = movie;
+        // console.log(this.movie);
       })
-      console.log(params['id'])
     })
   }
 }

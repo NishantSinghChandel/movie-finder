@@ -17,6 +17,7 @@
   padding: 10px 15px;
   background: transparent;
   border: 2px solid #1fd26a;
+  margin:2px;
 }
 
 .text-color {
@@ -45,9 +46,23 @@
   height: 360px;
 }
 
+.movie-card img{
+  max-height:250px;
+}
+.flex-between{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 @media (max-width: 991px) {
   .movie-card {
     height: 100%;
+  }
+  .movie-card img{
+    max-height:100%;
+  }
+  .flex-between{
+    flex-direction:column;
   }
 }
 

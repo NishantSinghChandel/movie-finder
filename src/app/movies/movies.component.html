@@ -14,14 +14,15 @@
   <div class="panel-heading headline">Search Results</div>
   <div class="panel-body section-bg">
     <div class="row">
-      <div *ngFor='let movie of searchRes;let i =index;' class="col-md-2 text-center">
-         <div class="movie-card" *ngIf='i < 18'>
+      <div *ngFor='let movie of searchRes;let i = index;' class="col-md-2 text-center">
+        <div class="movie-card" *ngIf='i < 18'>
           <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
-          <p><a class="headline" routerLink='/movie/{{movie.id}}'>View details &raquo;</a></p>
+          <p><a class="headline" routerLink='/movie/{{movie.id}}'>View Details &raquo;</a></p>
         </div>
       </div>
+      <div *ngIf="searchRes.length ===0" class="col-md-12 text-center">No Result Found</div>
     </div>
   </div>
 </div>
@@ -32,7 +33,7 @@
     <div class="row">
       <div *ngFor='let movie of popularList;let i =index;' class="col-md-2 text-center">
         <div class="movie-card" *ngIf='i < 6'>
-          <img  class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
           <h4 class="title">{{movie.title}}</h4>
           <p>{{movie.release_date}}</p>
           <p><a class="headline" routerLink='/movie/{{movie.id}}'>View details &raquo;</a></p>
@@ -56,4 +57,4 @@
       </div>
     </div>
   </div>
-
+</div>
